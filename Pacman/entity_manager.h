@@ -5,8 +5,6 @@
 
 #include "entity.h"
 
-typedef void CollisionUpdateEvent(Entity* entityA, Entity* entityB);
-
 class EntityManager
 {
 public:
@@ -17,17 +15,6 @@ public:
 	void SetCollisionMethod(CollisionUpdateEvent collisionsEvent)
 	{
 		this->collisionsEvent = collisionsEvent;
-	}
-
-	void AddEntity(std::string &name, Entity* entity)
-	{
-		std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
-		while (found != this->entities.end())
-		{
-			name += "0";
-			found = this->entities.find(name);
-		}
-		this->entities.insert(std::make_pair(name, entity));
 	}
 
 	Entity* Get(std::string name)
