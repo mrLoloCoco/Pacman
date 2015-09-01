@@ -293,9 +293,7 @@ bool won = false;
             lives_txt.setPosition(135, 2);
             lives_txt.setColor(sf::Color(255, 255, 0));
 
-            this->manager->SetCollisionMethod(UpdateCollisions);
             
-            this->LoadLevel(testLevel);
         }
 
         //UPDATE
